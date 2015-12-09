@@ -35,24 +35,24 @@ sidebar:
             title: global.home
             url: /
             icon: home
-        categories:
-            title: global.categories
-            url: /categories
-            icon: bookmark
-        tags:
-            title: global.tags
-            url: /tags
-            icon: tags
+        # categories:
+        #     title: global.categories
+        #     url: /categories
+        #     icon: bookmark
+        # tags:
+        #     title: global.tags
+        #     url: /tags
+        #     icon: tags
         archives:
             title: global.archives
             url: /archives
             icon: archive
-        search:
-            title: global.search
-            url: /#search
-            icon: search
-            # `st-search-show-outputs` classes are used to open swiftype search window
-            class: st-search-show-outputs
+        # search:
+        #     title: global.search
+        #     url: /#search
+        #     icon: search
+        #     # `st-search-show-outputs` classes are used to open swiftype search window
+        #     class: st-search-show-outputs
         about:
             title: global.about
             url: /#about
