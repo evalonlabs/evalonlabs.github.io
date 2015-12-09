@@ -19,7 +19,7 @@ Then you data are as unprotective as they were in their raw form. Why shouldn't 
 to make use of a trusted way? I guess the first solution that pops to our mind is `openssl`,
 right? So why not using just `openssl` to do the heavy ligting?
 
-*TL;DR;* [evancrypt.sh](https://gist.github.com/epappas/2c929665bb994251e771)
+**TL;DR;** [evancrypt.sh](https://gist.github.com/epappas/2c929665bb994251e771)
 
 ### Using the force of `openssl`
 
