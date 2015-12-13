@@ -6,21 +6,31 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Evalonlabs">
-    <title>Category: security - Evalonlabs</title>
+    <title>Handy openssl commands - Evalonlabs</title>
     <meta name="author" content="Evangelos Pappas">
     
     
         <link rel="alternative" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta name="description">
+    <meta name="description" content="My Handy openssl command list;
+Generate a password hash12openssl passwd -1openssl passwd -1 -salt &amp;lt;salt&amp;gt; &amp;lt;passwd&amp;gt;
+Really handy, if you vitally need to store users passwords in you system
+G">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Evalonlabs">
-<meta property="og:url" content="http://evalonlabs.github.io/categories/security/index.html">
+<meta property="og:title" content="Handy openssl commands">
+<meta property="og:url" content="http://evalonlabs.github.io/2015/12/09/handy-openssl-commands/index.html">
 <meta property="og:site_name" content="Evalonlabs">
-<meta property="og:description">
+<meta property="og:description" content="My Handy openssl command list;
+Generate a password hash12openssl passwd -1openssl passwd -1 -salt &amp;lt;salt&amp;gt; &amp;lt;passwd&amp;gt;
+Really handy, if you vitally need to store users passwords in you system
+G">
+<meta property="og:updated_time" content="2015-12-12T13:52:24.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Evalonlabs">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Handy openssl commands">
+<meta name="twitter:description" content="My Handy openssl command list;
+Generate a password hash12openssl passwd -1openssl passwd -1 -salt &amp;lt;salt&amp;gt; &amp;lt;passwd&amp;gt;
+Really handy, if you vitally need to store users passwords in you system
+G">
 <meta name="twitter:creator" content="@hevalon">
     
     
@@ -45,7 +55,7 @@
         
     
 
-<header id="header" data-behavior="2">
+<header id="header" data-behavior="4">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <h1 class="header-title">
         <a class="header-title-link" href="/ ">Evalonlabs</a>
@@ -67,7 +77,7 @@
 
     
 
-<nav id="sidebar" data-behavior="2">
+<nav id="sidebar" data-behavior="4">
     
         <div class="sidebar-profile">
             <a href="/#about">
@@ -185,25 +195,21 @@
 </nav>
 
             
-            <div id="main" data-behavior="2"
+            <div id="main" data-behavior="4"
                  class="
                         hasCoverMetaIn
                         ">
                 
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
     
-
-<section class="postShorten-group main-content-wrap">
     
-        
-        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-            <div class="postShorten-wrap">
-                <div class="postShorten-header">
-                    <h1 class="postShorten-title" itemprop="headline">
-                        
-                                <a class="link-unstyled" href="/2015/12/09/handy-openssl-commands/">Handy openssl commands</a>
-                        
-                    </h1>
-                    <div class="postShorten-meta">
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            Handy openssl commands
+        </h1>
+    
+    <div class="post-meta">
     <time itemprop="datePublished" content="Wed Dec 09 2015 20:29:51 GMT+0000">
 	
 		    Dec 09, 2015
@@ -217,11 +223,11 @@
 
     
 </div>
-                </div>
-                
-                
-                    <div class="postShorten-content" itemprop="articleBody">
-                        <p>My Handy <code>openssl</code> command list;</p>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p>My Handy <code>openssl</code> command list;</p>
 <h5 id="Generate_a_password_hash"><a href="#Generate_a_password_hash" class="headerlink" title="Generate a password hash"></a>Generate a password hash</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">openssl passwd -1</span><br><span class="line">openssl passwd -1 -salt <span class="tag">&lt;<span class="title">salt</span>&gt;</span> <span class="tag">&lt;<span class="title">passwd</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>Really handy, if you vitally need to store users passwords in you system</p>
 <h5 id="Generate_Randomness"><a href="#Generate_Randomness" class="headerlink" title="Generate Randomness"></a>Generate Randomness</h5><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">openssl</span> rand -<span class="keyword">base64 </span><span class="number">128</span></span><br></pre></td></tr></table></figure>
@@ -285,99 +291,88 @@
 <p>Set a certificate to be trusted for SSL client use and change set its alias to “Steve’s Class 1 CA”</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl x509 -<span class="keyword">in</span> cert<span class="class">.pem</span> -addtrust clientAuth  -setalias <span class="string">"Steve's Class 1 CA"</span> -out trust.pem</span><br></pre></td></tr></table></figure>
 
-                        
-                            
-
-                        
-                        
-                            <p>
-                                <a href="/2015/12/09/handy-openssl-commands/#post-footer" class="postShorten-excerpt_link link">
-                                    Comment and share
-                                </a>
-                            </p>
-                        
-                    </div>
-                
-            </div>
             
-        </article>
-    
-        
-        <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-            <div class="postShorten-wrap">
-                <div class="postShorten-header">
-                    <h1 class="postShorten-title" itemprop="headline">
-                        
-                                <a class="link-unstyled" href="/2015/12/07/How-to-encrypt-local-files/">How to encrypt local files</a>
-                        
-                    </h1>
-                    <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Mon Dec 07 2015 21:42:37 GMT+0000">
-	
-		    Dec 07, 2015
-    	
-    </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/security/">security</a>, <a class="category-link" href="/categories/security/openssl/">openssl</a>, <a class="category-link" href="/categories/security/openssl/encryption/">encryption</a>
-
-
-    
-</div>
-                </div>
                 
-                
-                    <div class="postShorten-content" itemprop="articleBody">
-                        <p>Securing local files, it’s a problem solved by a variaty of aps. Though each app are falling<br>into the falacy of providing their own way to encrypt and package the outputed file.<br>Now imagine the app developer deciding to discontinue the development and support of the app,<br>or even worse a known vulnerability of the app goes public (or worse, it never goes public).<br>Then you data are as unprotective as they were in their raw form. Why shouldn’t be an eay way<br>to make use of a trusted way? I guess the first solution that pops to our mind is <code>openssl</code>,<br>right? So why not using just <code>openssl</code> to do the heavy ligting?</p>
-<p><strong>TL;DR;</strong> <a href="https://gist.github.com/epappas/2c929665bb994251e771" target="_blank" rel="external">evancrypt.sh</a></p>
-<h3 id="Using_the_force_of_openssl"><a href="#Using_the_force_of_openssl" class="headerlink" title="Using the force of <code>openssl</code>"></a>Using the force of <code>openssl</code></h3><h4 id="Encrypting"><a href="#Encrypting" class="headerlink" title="Encrypting"></a>Encrypting</h4><p>So all you need is;</p>
-<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl aes-<span class="number">256</span>-cbc -salt -<span class="keyword">in</span> raw.<span class="keyword">file</span> -<span class="keyword">out</span> encrypted.aes</span><br></pre></td></tr></table></figure>
-<p>Done, you can now delete your <code>raw.file</code> and store your <code>encrypted.aes</code> file into an untrusted store!</p>
-<p>Wait, a file? what about a whole directory? Well a file is all we can do, if only we could point<br>to a directory like it was a file?</p>
-<p><code>tar</code> ladies and getlemen, to the rescue! We can <code>tar -cf</code> our directory and pass the the .tar file to<br>be encrypted.</p>
-<p>Yes you can pipe! So;</p>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -cf - raw.<span class="built_in">file</span>.<span class="operator">or</span>.<span class="built_in">directory</span> | openssl aes-<span class="number">256</span>-cbc -salt -out encrypted.aes</span><br></pre></td></tr></table></figure>
-<p>Done! With the command above you can securly generate an encrypted file, and being agnostic whether you are<br>tranforming a file or a dir, as all <code>openssl</code> get is a stream generated from the <code>tar</code> command.</p>
-<h4 id="Decrypting"><a href="#Decrypting" class="headerlink" title="Decrypting"></a>Decrypting</h4><p>Well an encrypted file, with no way of return has no better value than a deleted file, unless you are trying<br>to generate some randomnes, in that case all you need is;</p>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /dev/urandom <span class="string">| head -c 10</span></span><br></pre></td></tr></table></figure>
-<p>and you’ll have your first 10 random bytes.</p>
-<p>If on the other hand though, you intend to reuse your files, you are required to decrypt the file, by using<br>the same Cipher and salt.</p>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl aes-256-cbc -<span class="keyword">d</span> -salt -<span class="keyword">in</span> encrypted.aes -<span class="keyword">out</span> raw.<span class="keyword">file</span></span><br></pre></td></tr></table></figure>
-<p>But again, a tar file, has no better value as well, so why not piping the outcome to <code>tar</code> in order to magically<br>have our file;</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl aes-<span class="number">256</span>-cbc <span class="operator">-d</span> -salt -in encrypted.aes | tar -x <span class="operator">-f</span> -</span><br></pre></td></tr></table></figure>
-<p>The above command should generate back, whatever was passed as input.</p>
-<h3 id="Further_thoughs"><a href="#Further_thoughs" class="headerlink" title="Further thoughs"></a>Further thoughs</h3><p>Piping to <code>openssl</code> seems like a super skill that is freely available. Hacking with it can make your saturday evening<br>more fun than spending it on a sundbed near a tropical beach. Some ideas to get you into the rabbit hole;</p>
-<h4 id="Secure_one-directional_text_service"><a href="#Secure_one-directional_text_service" class="headerlink" title="Secure one-directional text service"></a>Secure one-directional text service</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#server</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">true</span>; <span class="keyword">do</span> nc -lp <span class="number">4445</span> | openssl aes-<span class="number">256</span>-cbc -d -salt -k proxyPass | openssl aes-<span class="number">256</span>-cbc -d -salt -k realPass | base64 --decode | cat; done</span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#proxy</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">true</span>; <span class="keyword">do</span> nc -lp <span class="number">4444</span> | openssl aes-<span class="number">256</span>-cbc -salt -k proxyPass | nc localhost <span class="number">4445</span>; done</span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#client</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">true</span>; <span class="keyword">do</span> cat /dev/urandom | head -c <span class="number">10</span> | base64 | openssl aes-<span class="number">256</span>-cbc -salt -k realPass | nc localhost <span class="number">4444</span>; done</span><br></pre></td></tr></table></figure>
-<p>Done! With the code above, a client can send a text to the server, by passing it first to a proxy. The only job that proxy has<br>is to double encrypt the message, acting as a “carrier” signal.</p>
-<p>Well having a whole setup to only send randomness from one node to an other makes no sense, so please don’t use the code above<br>as it is.</p>
 
-                        
-                            
-
-                        
-                        
-                            <p>
-                                <a href="/2015/12/07/How-to-encrypt-local-files/#post-footer" class="postShorten-excerpt_link link">
-                                    Comment and share
-                                </a>
-                            </p>
-                        
-                    </div>
-                
-            </div>
             
-        </article>
-    
-    <div class="pagination-bar">
-    <ul class="pagination">
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
         
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/encryption/">encryption</a> <a class="tag tag--primary tag--small t-link" href="/tags/openssl/">openssl</a> <a class="tag tag--primary tag--small t-link" href="/tags/security/">security</a>
+
+            </div>
         
-        <li class="pagination-number">page 1 of 1</li>
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/10/Simple-XOR-Encryption-in-JS/"  data-tooltip="Simple XOR Encryption in JS">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/07/How-to-encrypt-local-files/" data-tooltip="How to encrypt local files">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://evalonlabs.github.io/2015/12/09/handy-openssl-commands/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://evalonlabs.github.io/2015/12/09/handy-openssl-commands/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://evalonlabs.github.io/2015/12/09/handy-openssl-commands/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
     </ul>
 </div>
 
-</section>
+
+        
+            <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+        
+    </div>
+</article>
 
 
 
@@ -388,6 +383,89 @@
 </footer>
 
             </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/10/Simple-XOR-Encryption-in-JS/"  data-tooltip="Simple XOR Encryption in JS">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/12/07/How-to-encrypt-local-files/" data-tooltip="How to encrypt local files">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://evalonlabs.github.io/2015/12/09/handy-openssl-commands/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://evalonlabs.github.io/2015/12/09/handy-openssl-commands/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://evalonlabs.github.io/2015/12/09/handy-openssl-commands/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://evalonlabs.github.io/2015/12/09/handy-openssl-commands/">
+                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://evalonlabs.github.io/2015/12/09/handy-openssl-commands/">
+                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://evalonlabs.github.io/2015/12/09/handy-openssl-commands/">
+                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
             
         </div>
         <!-- Define author's picture -->
@@ -432,6 +510,17 @@
     <!--SCRIPTS-->
 <script src="/assets/js/script.min.js" type="text/javascript"></script>
 <!--SCRIPTS END-->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'evalonlabs';
+        (function() {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
 
 
 

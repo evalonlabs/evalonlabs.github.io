@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Evalonlabs">
-    <title>Tag: local files - Evalonlabs</title>
+    <title>Tag: network - Evalonlabs</title>
     <meta name="author" content="Evangelos Pappas">
     
     
@@ -15,7 +15,7 @@
     <meta name="description">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="Evalonlabs">
-<meta property="og:url" content="http://evalonlabs.github.io/tags/local-files/index.html">
+<meta property="og:url" content="http://evalonlabs.github.io/tags/network/index.html">
 <meta property="og:site_name" content="Evalonlabs">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
@@ -200,49 +200,25 @@
                 <div class="postShorten-header">
                     <h1 class="postShorten-title" itemprop="headline">
                         
-                                <a class="link-unstyled" href="/2015/12/07/How-to-encrypt-local-files/">How to encrypt local files</a>
+                                <a class="link-unstyled" href="/2015/12/13/Network-tools-to-the-rescue/">Network tools to the rescue</a>
                         
                     </h1>
                     <div class="postShorten-meta">
-    <time itemprop="datePublished" content="Mon Dec 07 2015 21:42:37 GMT+0000">
+    <time itemprop="datePublished" content="Sun Dec 13 2015 22:55:41 GMT+0000">
 	
-		    Dec 07, 2015
+		    Dec 13, 2015
     	
     </time>
-    
-        <span>in </span>
-        
-    <a class="category-link" href="/categories/security/">security</a>, <a class="category-link" href="/categories/security/openssl/">openssl</a>, <a class="category-link" href="/categories/security/openssl/encryption/">encryption</a>
-
-
     
 </div>
                 </div>
                 
                 
                     <div class="postShorten-content" itemprop="articleBody">
-                        <p>Securing local files, it’s a problem solved by a variaty of aps. Though each app are falling<br>into the falacy of providing their own way to encrypt and package the outputed file.<br>Now imagine the app developer deciding to discontinue the development and support of the app,<br>or even worse a known vulnerability of the app goes public (or worse, it never goes public).<br>Then you data are as unprotective as they were in their raw form. Why shouldn’t be an eay way<br>to make use of a trusted way? I guess the first solution that pops to our mind is <code>openssl</code>,<br>right? So why not using just <code>openssl</code> to do the heavy ligting?</p>
-<p><strong>TL;DR;</strong> <a href="https://gist.github.com/epappas/2c929665bb994251e771" target="_blank" rel="external">evancrypt.sh</a></p>
-<h3 id="Using_the_force_of_openssl"><a href="#Using_the_force_of_openssl" class="headerlink" title="Using the force of <code>openssl</code>"></a>Using the force of <code>openssl</code></h3><h4 id="Encrypting"><a href="#Encrypting" class="headerlink" title="Encrypting"></a>Encrypting</h4><p>So all you need is;</p>
-<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl aes-<span class="number">256</span>-cbc -salt -<span class="keyword">in</span> raw.<span class="keyword">file</span> -<span class="keyword">out</span> encrypted.aes</span><br></pre></td></tr></table></figure>
-<p>Done, you can now delete your <code>raw.file</code> and store your <code>encrypted.aes</code> file into an untrusted store!</p>
-<p>Wait, a file? what about a whole directory? Well a file is all we can do, if only we could point<br>to a directory like it was a file?</p>
-<p><code>tar</code> ladies and getlemen, to the rescue! We can <code>tar -cf</code> our directory and pass the the .tar file to<br>be encrypted.</p>
-<p>Yes you can pipe! So;</p>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -cf - raw.<span class="built_in">file</span>.<span class="operator">or</span>.<span class="built_in">directory</span> | openssl aes-<span class="number">256</span>-cbc -salt -out encrypted.aes</span><br></pre></td></tr></table></figure>
-<p>Done! With the command above you can securly generate an encrypted file, and being agnostic whether you are<br>tranforming a file or a dir, as all <code>openssl</code> get is a stream generated from the <code>tar</code> command.</p>
-<h4 id="Decrypting"><a href="#Decrypting" class="headerlink" title="Decrypting"></a>Decrypting</h4><p>Well an encrypted file, with no way of return has no better value than a deleted file, unless you are trying<br>to generate some randomnes, in that case all you need is;</p>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /dev/urandom <span class="string">| head -c 10</span></span><br></pre></td></tr></table></figure>
-<p>and you’ll have your first 10 random bytes.</p>
-<p>If on the other hand though, you intend to reuse your files, you are required to decrypt the file, by using<br>the same Cipher and salt.</p>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl aes-256-cbc -<span class="keyword">d</span> -salt -<span class="keyword">in</span> encrypted.aes -<span class="keyword">out</span> raw.<span class="keyword">file</span></span><br></pre></td></tr></table></figure>
-<p>But again, a tar file, has no better value as well, so why not piping the outcome to <code>tar</code> in order to magically<br>have our file;</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl aes-<span class="number">256</span>-cbc <span class="operator">-d</span> -salt -in encrypted.aes | tar -x <span class="operator">-f</span> -</span><br></pre></td></tr></table></figure>
-<p>The above command should generate back, whatever was passed as input.</p>
-<h3 id="Further_thoughs"><a href="#Further_thoughs" class="headerlink" title="Further thoughs"></a>Further thoughs</h3><p>Piping to <code>openssl</code> seems like a super skill that is freely available. Hacking with it can make your saturday evening<br>more fun than spending it on a sundbed near a tropical beach. Some ideas to get you into the rabbit hole;</p>
-<h4 id="Secure_one-directional_text_service"><a href="#Secure_one-directional_text_service" class="headerlink" title="Secure one-directional text service"></a>Secure one-directional text service</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#server</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">true</span>; <span class="keyword">do</span> nc -lp <span class="number">4445</span> | openssl aes-<span class="number">256</span>-cbc -d -salt -k proxyPass | openssl aes-<span class="number">256</span>-cbc -d -salt -k realPass | base64 --decode | cat; done</span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#proxy</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">true</span>; <span class="keyword">do</span> nc -lp <span class="number">4444</span> | openssl aes-<span class="number">256</span>-cbc -salt -k proxyPass | nc localhost <span class="number">4445</span>; done</span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#client</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">true</span>; <span class="keyword">do</span> cat /dev/urandom | head -c <span class="number">10</span> | base64 | openssl aes-<span class="number">256</span>-cbc -salt -k realPass | nc localhost <span class="number">4444</span>; done</span><br></pre></td></tr></table></figure>
-<p>Done! With the code above, a client can send a text to the server, by passing it first to a proxy. The only job that proxy has<br>is to double encrypt the message, acting as a “carrier” signal.</p>
-<p>Well having a whole setup to only send randomness from one node to an other makes no sense, so please don’t use the code above<br>as it is.</p>
+                        <h5 id="Benchmark_with_apache_benchmark_tool"><a href="#Benchmark_with_apache_benchmark_tool" class="headerlink" title="Benchmark with apache benchmark tool"></a>Benchmark with apache benchmark tool</h5><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ab -n <span class="number">99999</span> -c <span class="number">1000</span> http:<span class="comment">//127.0.0.1:9687/</span></span><br></pre></td></tr></table></figure>
+<h5 id="Port_channels__26amp_3B_scan"><a href="#Port_channels__26amp_3B_scan" class="headerlink" title="Port channels &amp; scan"></a>Port channels &amp; scan</h5><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cat &gt; <span class="regexp">/dev/</span>tcp<span class="regexp">/localhost/</span><span class="number">1234</span></span><br><span class="line">cat &lt; <span class="regexp">/dev/</span>tcp<span class="regexp">/localhost/</span><span class="number">1234</span> | <span class="keyword">grep</span> <span class="number">1234</span></span><br><span class="line">nc -vzt host port</span><br></pre></td></tr></table></figure>
+<h5 id="Trace_a_process"><a href="#Trace_a_process" class="headerlink" title="Trace a process"></a>Trace a process</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">sudo strace -t -p <span class="number">13262</span> <span class="operator">-f</span> <span class="operator">-e</span> trace=network <span class="operator">-s</span> <span class="number">10000</span></span><br><span class="line"></span><br><span class="line">strace -t <span class="operator">-e</span> trace=open,close,<span class="built_in">read</span>,write df</span><br><span class="line">sudo ltrace -t -p <span class="number">13262</span></span><br><span class="line"></span><br><span class="line">sudo strace -t $(pidof <span class="string">"nginx"</span> | sed <span class="string">'s/\([0-9]*\)/-p \1/g'</span>) <span class="operator">-f</span> <span class="operator">-e</span> trace=network,open,close,<span class="built_in">read</span>,write <span class="operator">-s</span> <span class="number">10000</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> straceall &#123;</span><br><span class="line">  strace $(pidof <span class="string">"<span class="variable">$&#123;1&#125;</span>"</span> | sed <span class="string">'s/\([0-9]*\)/-p \1/g'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="Trace_a_network_log"><a href="#Trace_a_network_log" class="headerlink" title="Trace a network log"></a>Trace a network log</h5><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">ngrep</span> -qt <span class="string">'REGEX '</span> <span class="string">'port 80'</span></span><br></pre></td></tr></table></figure>
 
                         
                             
@@ -250,7 +226,7 @@
                         
                         
                             <p>
-                                <a href="/2015/12/07/How-to-encrypt-local-files/#post-footer" class="postShorten-excerpt_link link">
+                                <a href="/2015/12/13/Network-tools-to-the-rescue/#post-footer" class="postShorten-excerpt_link link">
                                     Comment and share
                                 </a>
                             </p>
