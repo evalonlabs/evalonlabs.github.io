@@ -45,9 +45,9 @@ post:
 author:
     # Your biography in english (Markdown and HTML supported)
     bio: |
-        {
-            "Software Engineer": ["JavaScript", "Node.JS", "erlang", "Java", "Messaging", "SMPP", "SMTP"],
-            "Fields": ["ECommerce", "Advertising", "Marketing"],
-            "Photographer": "wannabe"
-        }
+         {bio,
+             {softwareEngineer, [JavaScript, Node.JS, erlang, Java, Messaging, SMPP, SMTP]},
+             {fields, [ECommerce, Advertising, Marketing]},
+             {Photographer, wannabe}}.
+
     job: '[VibrantMedia, Evalonlabs].'

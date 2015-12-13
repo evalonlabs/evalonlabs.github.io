@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Tails of an engineer]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://evalonlabs.github.io/"/>
-  <updated>2015-12-09T08:05:21.000Z</updated>
+  <updated>2015-12-13T23:26:44.000Z</updated>
   <id>http://evalonlabs.github.io/</id>
   
   <author>
@@ -13,6 +13,167 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Network tools to the rescue]]></title>
+    <link href="http://evalonlabs.github.io/2015/12/13/Network-tools-to-the-rescue/"/>
+    <id>http://evalonlabs.github.io/2015/12/13/Network-tools-to-the-rescue/</id>
+    <published>2015-12-13T22:55:41.000Z</published>
+    <updated>2015-12-13T23:26:44.000Z</updated>
+    <content type="html"><![CDATA[<h5 id="Benchmark_with_apache_benchmark_tool"><a href="#Benchmark_with_apache_benchmark_tool" class="headerlink" title="Benchmark with apache benchmark tool"></a>Benchmark with apache benchmark tool</h5><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ab -n <span class="number">99999</span> -c <span class="number">1000</span> http:<span class="comment">//127.0.0.1:9687/</span></span><br></pre></td></tr></table></figure>
+<h5 id="Port_channels__26amp_3B_scan"><a href="#Port_channels__26amp_3B_scan" class="headerlink" title="Port channels &amp; scan"></a>Port channels &amp; scan</h5><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cat &gt; <span class="regexp">/dev/</span>tcp<span class="regexp">/localhost/</span><span class="number">1234</span></span><br><span class="line">cat &lt; <span class="regexp">/dev/</span>tcp<span class="regexp">/localhost/</span><span class="number">1234</span> | <span class="keyword">grep</span> <span class="number">1234</span></span><br><span class="line">nc -vzt host port</span><br></pre></td></tr></table></figure>
+<h5 id="Trace_a_process"><a href="#Trace_a_process" class="headerlink" title="Trace a process"></a>Trace a process</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">sudo strace -t -p <span class="number">13262</span> <span class="operator">-f</span> <span class="operator">-e</span> trace=network <span class="operator">-s</span> <span class="number">10000</span></span><br><span class="line"></span><br><span class="line">strace -t <span class="operator">-e</span> trace=open,close,<span class="built_in">read</span>,write df</span><br><span class="line">sudo ltrace -t -p <span class="number">13262</span></span><br><span class="line"></span><br><span class="line">sudo strace -t $(pidof <span class="string">"nginx"</span> | sed <span class="string">'s/\([0-9]*\)/-p \1/g'</span>) <span class="operator">-f</span> <span class="operator">-e</span> trace=network,open,close,<span class="built_in">read</span>,write <span class="operator">-s</span> <span class="number">10000</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> straceall &#123;</span><br><span class="line">  strace $(pidof <span class="string">"<span class="variable">$&#123;1&#125;</span>"</span> | sed <span class="string">'s/\([0-9]*\)/-p \1/g'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="Trace_a_network_log"><a href="#Trace_a_network_log" class="headerlink" title="Trace a network log"></a>Trace a network log</h5><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">ngrep</span> -qt <span class="string">'REGEX '</span> <span class="string">'port 80'</span></span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h5 id="Benchmark_with_apache_benchmark_tool"><a href="#Benchmark_with_apache_benchmark_tool" class="headerlink" title="Benchmark with apach]]>
+    </summary>
+    
+      <category term="network" scheme="http://evalonlabs.github.io/tags/network/"/>
+    
+      <category term="unix" scheme="http://evalonlabs.github.io/tags/unix/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Notes of unix snippets]]></title>
+    <link href="http://evalonlabs.github.io/2015/12/12/Notes-of-unix-snippets/"/>
+    <id>http://evalonlabs.github.io/2015/12/12/Notes-of-unix-snippets/</id>
+    <published>2015-12-12T14:58:19.000Z</published>
+    <updated>2015-12-13T22:47:01.000Z</updated>
+    <content type="html"><![CDATA[<h5 id="Read_from_in_a_streaming_way"><a href="#Read_from_in_a_streaming_way" class="headerlink" title="Read from in a streaming way"></a>Read from in a streaming way</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="built_in">read</span> line; <span class="keyword">do</span> <span class="variable">$&#123;CMD&#125;</span>; <span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<h5 id="Tokenize_a_csv"><a href="#Tokenize_a_csv" class="headerlink" title="Tokenize a csv"></a>Tokenize a csv</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> $(cat <span class="variable">$1</span>); <span class="keyword">do</span></span><br><span class="line">    IFS=<span class="string">','</span> <span class="built_in">read</span> <span class="operator">-a</span> array &lt;&lt;&lt; <span class="string">"<span class="variable">$i</span>"</span>;</span><br><span class="line">    <span class="built_in">echo</span> <span class="variable">$&#123;array[0]&#125;</span> <span class="variable">$&#123;array[1]&#125;</span> <span class="variable">$&#123;array[2]&#125;</span>;</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<h5 id="Redirection"><a href="#Redirection" class="headerlink" title="Redirection"></a>Redirection</h5><h6 id="Bidirectional"><a href="#Bidirectional" class="headerlink" title="Bidirectional"></a>Bidirectional</h6><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">exec <span class="number">4</span>&lt;&gt;(<span class="command"><span class="keyword">command</span>)</span></span><br><span class="line"><span class="command"><span class="keyword">command</span> &lt;&amp;<span class="title">4</span> &gt;&amp;<span class="title">4</span></span></span><br></pre></td></tr></table></figure>
+<h6 id="Named_Pipe"><a href="#Named_Pipe" class="headerlink" title="Named Pipe"></a>Named Pipe</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /tmp</span><br><span class="line">mkfifo fifo</span><br><span class="line"><span class="built_in">exec</span> &lt; fifo</span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h5 id="Read_from_in_a_streaming_way"><a href="#Read_from_in_a_streaming_way" class="headerlink" title="Read from in a streaming way"></a>Re]]>
+    </summary>
+    
+      <category term="bash" scheme="http://evalonlabs.github.io/tags/bash/"/>
+    
+      <category term="bash programming" scheme="http://evalonlabs.github.io/tags/bash-programming/"/>
+    
+      <category term="unix" scheme="http://evalonlabs.github.io/tags/unix/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Simple XOR Encryption in JS]]></title>
+    <link href="http://evalonlabs.github.io/2015/12/10/Simple-XOR-Encryption-in-JS/"/>
+    <id>http://evalonlabs.github.io/2015/12/10/Simple-XOR-Encryption-in-JS/</id>
+    <published>2015-12-10T09:45:25.000Z</published>
+    <updated>2015-12-10T09:48:15.000Z</updated>
+    <content type="html"><![CDATA[<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function xorConvert (<span class="built_in">text</span>, <span class="variable">key</span>) &#123;</span><br><span class="line">    var kL = <span class="variable">key</span>.length;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">Array</span>.prototype</span><br><span class="line">        .slice.call(<span class="built_in">text</span>)</span><br><span class="line">        .<span class="built_in">map</span>(function (c, index) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">String</span>.fromCharCode(c.charCodeAt(<span class="number">0</span>) ^ <span class="variable">key</span>[index % kL].charCodeAt(<span class="number">0</span>));</span><br><span class="line">        &#125;).<span class="built_in">join</span>(<span class="string">''</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var <span class="variable">key</span> = <span class="string">"RandomPassKey"</span>;</span><br><span class="line">var txt = <span class="string">"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@£#$%^&amp;*()[]&#123;&#125;;:'\",.&lt;&gt;/\\"</span>;</span><br><span class="line">var cipherText = xorConvert(txt, <span class="variable">key</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">assert</span>(xorConvert(cipherText, <span class="variable">key</span>) === txt);</span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span ]]>
+    </summary>
+    
+      <category term="encryption" scheme="http://evalonlabs.github.io/tags/encryption/"/>
+    
+      <category term="javascript" scheme="http://evalonlabs.github.io/tags/javascript/"/>
+    
+      <category term="security" scheme="http://evalonlabs.github.io/tags/security/"/>
+    
+      <category term="xor" scheme="http://evalonlabs.github.io/tags/xor/"/>
+    
+      <category term="javascript" scheme="http://evalonlabs.github.io/categories/javascript/"/>
+    
+      <category term="security" scheme="http://evalonlabs.github.io/categories/javascript/security/"/>
+    
+      <category term="encryption" scheme="http://evalonlabs.github.io/categories/javascript/security/encryption/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Handy openssl commands]]></title>
+    <link href="http://evalonlabs.github.io/2015/12/09/handy-openssl-commands/"/>
+    <id>http://evalonlabs.github.io/2015/12/09/handy-openssl-commands/</id>
+    <published>2015-12-09T20:29:51.000Z</published>
+    <updated>2015-12-12T13:52:24.000Z</updated>
+    <content type="html"><![CDATA[<p>My Handy <code>openssl</code> command list;</p>
+<h5 id="Generate_a_password_hash"><a href="#Generate_a_password_hash" class="headerlink" title="Generate a password hash"></a>Generate a password hash</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">openssl passwd -1</span><br><span class="line">openssl passwd -1 -salt <span class="tag">&lt;<span class="title">salt</span>&gt;</span> <span class="tag">&lt;<span class="title">passwd</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Really handy, if you vitally need to store users passwords in you system</p>
+<h5 id="Generate_Randomness"><a href="#Generate_Randomness" class="headerlink" title="Generate Randomness"></a>Generate Randomness</h5><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">openssl</span> rand -<span class="keyword">base64 </span><span class="number">128</span></span><br></pre></td></tr></table></figure>
+<p>A nice comparison of this wold be with</p>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /dev/urandom |<span class="string"> head -c 128 </span>|<span class="string"> base64</span></span><br></pre></td></tr></table></figure>
+<p>Although it seems <code>openssl</code> actually uses <code>/dev/urandom</code> under the hood, when hardware is specified</p>
+<h5 id="Generating_Keys"><a href="#Generating_Keys" class="headerlink" title="Generating Keys"></a>Generating Keys</h5><p>RSA Key</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl genrsa -aes256 -out <span class="keyword">node</span>.<span class="identifier"></span><span class="title">key</span> <span class="number">2048</span></span><br></pre></td></tr></table></figure>
+<p>Public Key</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl rsa -<span class="operator">in</span> <span class="keyword">node</span>.<span class="identifier"></span><span class="title">key</span> -pubout -out <span class="keyword">node</span>.<span class="identifier"></span><span class="title">pub</span>.key</span><br></pre></td></tr></table></figure>
+<p>DSA key</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">openssl dsaparam -genkey <span class="number">2048</span> -out <span class="keyword">node</span>.<span class="identifier"></span><span class="title">dsa</span>.key</span><br><span class="line">openssl dsa -<span class="operator">in</span> <span class="keyword">node</span>.<span class="identifier"></span><span class="title">dsa</span>.key -out <span class="keyword">node</span>.<span class="identifier"></span><span class="title">key</span> -aes256</span><br></pre></td></tr></table></figure>
+<p>or simpler;</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl dsaparam -genkey <span class="number">2048</span> | openssl dsa -out <span class="keyword">node</span>.<span class="identifier"></span><span class="title">key</span> -aes256</span><br></pre></td></tr></table></figure>
+<p>ECDSA key</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">openssl ecparam -genkey -name secp256r1 -out <span class="keyword">node</span>.<span class="identifier"></span><span class="title">ecdsa</span>.key</span><br><span class="line">openssl ec -<span class="operator">in</span> <span class="keyword">node</span>.<span class="identifier"></span><span class="title">ecdsa</span>.key -out <span class="keyword">node</span>.<span class="identifier"></span><span class="title">key</span> -aes256</span><br></pre></td></tr></table></figure>
+<p>or simpler;</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl ecparam -genkey -name secp256r1 | openssl ec -out <span class="keyword">node</span>.<span class="identifier"></span><span class="title">key</span> -aes256</span><br></pre></td></tr></table></figure>
+<h5 id="Self_signed_Keys"><a href="#Self_signed_Keys" class="headerlink" title="Self signed Keys"></a>Self signed Keys</h5><p>In order to request a new self signed certificate, and a new private key:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl req -<span class="keyword">new</span> -x509 -keyout privkey.pem  -newkey rsa:<span class="number">2048</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>req</code> : certificate request and certificate generating utility</li>
+<li><code>new</code> : generates a new certificate request</li>
+<li><code>x509</code> : creates a test certificate or a self signed root CA</li>
+<li><code>keyout</code> : the filename to write the newly created private key</li>
+<li><code>newkey</code> : creates a new certificate request and a new private key</li>
+</ul>
+<p>Also</p>
+<p>Examine and verify certificate request</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl req -<span class="operator">in</span> <span class="keyword">node</span>.<span class="identifier"></span><span class="title">key</span> -text -verify -noout</span><br></pre></td></tr></table></figure>
+<p>Creating a csr with a key</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl req -new -key <span class="keyword">node</span>.<span class="identifier"></span><span class="title">key</span> -out <span class="keyword">node</span>.<span class="identifier"></span><span class="title">csr</span></span><br></pre></td></tr></table></figure>
+<p>Requesting a custom siggning certificate</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl x509 -req -days <span class="number">365</span> -<span class="operator">in</span> <span class="keyword">node</span>.<span class="identifier"></span><span class="title">csr</span> -signkey <span class="keyword">node</span>.<span class="identifier"></span><span class="title">key</span> -out <span class="keyword">node</span>.<span class="identifier"></span><span class="title">crt</span></span><br></pre></td></tr></table></figure>
+<p>or without a csr</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl req -new -x509 -days <span class="number">365</span> -key <span class="keyword">node</span>.<span class="identifier"></span><span class="title">key</span> -out <span class="keyword">node</span>.<span class="identifier"></span><span class="title">crt</span></span><br></pre></td></tr></table></figure>
+<p>Then creating a csr from an existing certificate</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl x509 -x509toreq -<span class="operator">in</span> <span class="keyword">node</span>.<span class="identifier"></span><span class="title">crt</span> -ou <span class="keyword">node</span>.<span class="identifier"></span><span class="title">csr</span> -signkey <span class="keyword">node</span>.<span class="identifier"></span><span class="title">key</span></span><br></pre></td></tr></table></figure>
+<h6 id="x509"><a href="#x509" class="headerlink" title="x509"></a>x509</h6><p>Display the contents of a certificate:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl x509 -<span class="keyword">in</span> cert<span class="class">.pem</span> -noout -text</span><br></pre></td></tr></table></figure>
+<p>Display the certificate serial number:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl x509 -<span class="keyword">in</span> cert<span class="class">.pem</span> -noout -serial</span><br></pre></td></tr></table></figure>
+<p>Display the certificate subject name:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl x509 -<span class="keyword">in</span> cert<span class="class">.pem</span> -noout -subject</span><br></pre></td></tr></table></figure>
+<p>Display the certificate subject name in RFC2253 form:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl x509 -<span class="keyword">in</span> cert<span class="class">.pem</span> -noout -subject -nameopt RFC2253</span><br></pre></td></tr></table></figure>
+<p>Display the certificate subject name in oneline form on a terminal supporting UTF8:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl x509 -<span class="keyword">in</span> cert<span class="class">.pem</span> -noout -subject -nameopt oneline,-esc_msb</span><br></pre></td></tr></table></figure>
+<p>Display the certificate MD5 fingerprint:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl x509 -<span class="keyword">in</span> cert<span class="class">.pem</span> -noout -fingerprint</span><br></pre></td></tr></table></figure>
+<p>Display the certificate SHA1 fingerprint:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl x509 -sha1 -<span class="keyword">in</span> cert<span class="class">.pem</span> -noout -fingerprint</span><br></pre></td></tr></table></figure>
+<p>Convert a certificate from PEM to DER format:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl x509 -<span class="keyword">in</span> cert<span class="class">.pem</span> -inform PEM -out cert<span class="class">.der</span> -outform DER</span><br></pre></td></tr></table></figure>
+<p>Convert a certificate to a certificate request:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl x509 -x509toreq -<span class="keyword">in</span> cert<span class="class">.pem</span> -out req<span class="class">.pem</span> -signkey key.pem</span><br></pre></td></tr></table></figure>
+<p>Convert a certificate request into a self signed certificate using extensions for a CA:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">openssl x509 -req -<span class="keyword">in</span> careq<span class="class">.pem</span> -extfile openssl<span class="class">.cnf</span> -extensions v3_ca \</span><br><span class="line">        -signkey key<span class="class">.pem</span> -out cacert.pem</span><br></pre></td></tr></table></figure>
+<p>Sign a certificate request using the CA certificate above and add user certificate extensions:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl x509 -req -<span class="keyword">in</span> req<span class="class">.pem</span> -extfile openssl<span class="class">.cnf</span> -extensions v3_usr -CA cacert<span class="class">.pem</span> -CAkey key<span class="class">.pem</span> -CAcreateserial</span><br></pre></td></tr></table></figure>
+<p>Set a certificate to be trusted for SSL client use and change set its alias to “Steve’s Class 1 CA”</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl x509 -<span class="keyword">in</span> cert<span class="class">.pem</span> -addtrust clientAuth  -setalias <span class="string">"Steve's Class 1 CA"</span> -out trust.pem</span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>My Handy <code>openssl</code> command list;</p>
+<h5 id="Generate_a_password_hash"><a href="#Generate_a_password_hash" class="headerlink" ]]>
+    </summary>
+    
+      <category term="encryption" scheme="http://evalonlabs.github.io/tags/encryption/"/>
+    
+      <category term="openssl" scheme="http://evalonlabs.github.io/tags/openssl/"/>
+    
+      <category term="security" scheme="http://evalonlabs.github.io/tags/security/"/>
+    
+      <category term="security" scheme="http://evalonlabs.github.io/categories/security/"/>
+    
+      <category term="openssl" scheme="http://evalonlabs.github.io/categories/security/openssl/"/>
+    
+      <category term="encryption" scheme="http://evalonlabs.github.io/categories/security/openssl/encryption/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[How to encrypt local files]]></title>
