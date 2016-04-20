@@ -3,9 +3,9 @@
   <title><![CDATA[Evalonlabs]]></title>
   <subtitle><![CDATA[Tails of an engineer]]></subtitle>
   <link href="/atom.xml" rel="self"/>
-  <link href="http://evalonlabs.github.io/"/>
+  <link href="http://evalonlabs.com/"/>
   <updated>2015-12-13T23:26:44.000Z</updated>
-  <id>http://evalonlabs.github.io/</id>
+  <id>http://evalonlabs.com/</id>
   
   <author>
     <name><![CDATA[Evangelos Pappas]]></name>
@@ -16,8 +16,8 @@
   
   <entry>
     <title><![CDATA[Network tools to the rescue]]></title>
-    <link href="http://evalonlabs.github.io/2015/12/13/Network-tools-to-the-rescue/"/>
-    <id>http://evalonlabs.github.io/2015/12/13/Network-tools-to-the-rescue/</id>
+    <link href="http://evalonlabs.com/2015/12/13/Network-tools-to-the-rescue/"/>
+    <id>http://evalonlabs.com/2015/12/13/Network-tools-to-the-rescue/</id>
     <published>2015-12-13T22:55:41.000Z</published>
     <updated>2015-12-13T23:26:44.000Z</updated>
     <content type="html"><![CDATA[<h5 id="Benchmark_with_apache_benchmark_tool"><a href="#Benchmark_with_apache_benchmark_tool" class="headerlink" title="Benchmark with apache benchmark tool"></a>Benchmark with apache benchmark tool</h5><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ab -n <span class="number">99999</span> -c <span class="number">1000</span> http:<span class="comment">//127.0.0.1:9687/</span></span><br></pre></td></tr></table></figure>
@@ -29,16 +29,16 @@
     <![CDATA[<h5 id="Benchmark_with_apache_benchmark_tool"><a href="#Benchmark_with_apache_benchmark_tool" class="headerlink" title="Benchmark with apach]]>
     </summary>
     
-      <category term="network" scheme="http://evalonlabs.github.io/tags/network/"/>
+      <category term="network" scheme="http://evalonlabs.com/tags/network/"/>
     
-      <category term="unix" scheme="http://evalonlabs.github.io/tags/unix/"/>
+      <category term="unix" scheme="http://evalonlabs.com/tags/unix/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Notes of unix snippets]]></title>
-    <link href="http://evalonlabs.github.io/2015/12/12/Notes-of-unix-snippets/"/>
-    <id>http://evalonlabs.github.io/2015/12/12/Notes-of-unix-snippets/</id>
+    <link href="http://evalonlabs.com/2015/12/12/Notes-of-unix-snippets/"/>
+    <id>http://evalonlabs.com/2015/12/12/Notes-of-unix-snippets/</id>
     <published>2015-12-12T14:58:19.000Z</published>
     <updated>2015-12-13T22:47:01.000Z</updated>
     <content type="html"><![CDATA[<h5 id="Read_from_in_a_streaming_way"><a href="#Read_from_in_a_streaming_way" class="headerlink" title="Read from in a streaming way"></a>Read from in a streaming way</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="built_in">read</span> line; <span class="keyword">do</span> <span class="variable">$&#123;CMD&#125;</span>; <span class="keyword">done</span></span><br></pre></td></tr></table></figure>
@@ -50,18 +50,18 @@
     <![CDATA[<h5 id="Read_from_in_a_streaming_way"><a href="#Read_from_in_a_streaming_way" class="headerlink" title="Read from in a streaming way"></a>Re]]>
     </summary>
     
-      <category term="bash" scheme="http://evalonlabs.github.io/tags/bash/"/>
+      <category term="bash" scheme="http://evalonlabs.com/tags/bash/"/>
     
-      <category term="bash programming" scheme="http://evalonlabs.github.io/tags/bash-programming/"/>
+      <category term="bash programming" scheme="http://evalonlabs.com/tags/bash-programming/"/>
     
-      <category term="unix" scheme="http://evalonlabs.github.io/tags/unix/"/>
+      <category term="unix" scheme="http://evalonlabs.com/tags/unix/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Simple XOR Encryption in JS]]></title>
-    <link href="http://evalonlabs.github.io/2015/12/10/Simple-XOR-Encryption-in-JS/"/>
-    <id>http://evalonlabs.github.io/2015/12/10/Simple-XOR-Encryption-in-JS/</id>
+    <link href="http://evalonlabs.com/2015/12/10/Simple-XOR-Encryption-in-JS/"/>
+    <id>http://evalonlabs.com/2015/12/10/Simple-XOR-Encryption-in-JS/</id>
     <published>2015-12-10T09:45:25.000Z</published>
     <updated>2015-12-10T09:48:15.000Z</updated>
     <content type="html"><![CDATA[<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function xorConvert (<span class="built_in">text</span>, <span class="variable">key</span>) &#123;</span><br><span class="line">    var kL = <span class="variable">key</span>.length;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">Array</span>.prototype</span><br><span class="line">        .slice.call(<span class="built_in">text</span>)</span><br><span class="line">        .<span class="built_in">map</span>(function (c, index) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">String</span>.fromCharCode(c.charCodeAt(<span class="number">0</span>) ^ <span class="variable">key</span>[index % kL].charCodeAt(<span class="number">0</span>));</span><br><span class="line">        &#125;).<span class="built_in">join</span>(<span class="string">''</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var <span class="variable">key</span> = <span class="string">"RandomPassKey"</span>;</span><br><span class="line">var txt = <span class="string">"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@£#$%^&amp;*()[]&#123;&#125;;:'\",.&lt;&gt;/\\"</span>;</span><br><span class="line">var cipherText = xorConvert(txt, <span class="variable">key</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">assert</span>(xorConvert(cipherText, <span class="variable">key</span>) === txt);</span><br></pre></td></tr></table></figure>
@@ -70,26 +70,26 @@
     <![CDATA[<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span ]]>
     </summary>
     
-      <category term="encryption" scheme="http://evalonlabs.github.io/tags/encryption/"/>
+      <category term="encryption" scheme="http://evalonlabs.com/tags/encryption/"/>
     
-      <category term="javascript" scheme="http://evalonlabs.github.io/tags/javascript/"/>
+      <category term="javascript" scheme="http://evalonlabs.com/tags/javascript/"/>
     
-      <category term="security" scheme="http://evalonlabs.github.io/tags/security/"/>
+      <category term="security" scheme="http://evalonlabs.com/tags/security/"/>
     
-      <category term="xor" scheme="http://evalonlabs.github.io/tags/xor/"/>
+      <category term="xor" scheme="http://evalonlabs.com/tags/xor/"/>
     
-      <category term="javascript" scheme="http://evalonlabs.github.io/categories/javascript/"/>
+      <category term="javascript" scheme="http://evalonlabs.com/categories/javascript/"/>
     
-      <category term="security" scheme="http://evalonlabs.github.io/categories/javascript/security/"/>
+      <category term="security" scheme="http://evalonlabs.com/categories/javascript/security/"/>
     
-      <category term="encryption" scheme="http://evalonlabs.github.io/categories/javascript/security/encryption/"/>
+      <category term="encryption" scheme="http://evalonlabs.com/categories/javascript/security/encryption/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Handy openssl commands]]></title>
-    <link href="http://evalonlabs.github.io/2015/12/09/handy-openssl-commands/"/>
-    <id>http://evalonlabs.github.io/2015/12/09/handy-openssl-commands/</id>
+    <link href="http://evalonlabs.com/2015/12/09/handy-openssl-commands/"/>
+    <id>http://evalonlabs.com/2015/12/09/handy-openssl-commands/</id>
     <published>2015-12-09T20:29:51.000Z</published>
     <updated>2015-12-12T13:52:24.000Z</updated>
     <content type="html"><![CDATA[<p>My Handy <code>openssl</code> command list;</p>
@@ -161,24 +161,24 @@
 <h5 id="Generate_a_password_hash"><a href="#Generate_a_password_hash" class="headerlink" ]]>
     </summary>
     
-      <category term="encryption" scheme="http://evalonlabs.github.io/tags/encryption/"/>
+      <category term="encryption" scheme="http://evalonlabs.com/tags/encryption/"/>
     
-      <category term="openssl" scheme="http://evalonlabs.github.io/tags/openssl/"/>
+      <category term="openssl" scheme="http://evalonlabs.com/tags/openssl/"/>
     
-      <category term="security" scheme="http://evalonlabs.github.io/tags/security/"/>
+      <category term="security" scheme="http://evalonlabs.com/tags/security/"/>
     
-      <category term="security" scheme="http://evalonlabs.github.io/categories/security/"/>
+      <category term="security" scheme="http://evalonlabs.com/categories/security/"/>
     
-      <category term="openssl" scheme="http://evalonlabs.github.io/categories/security/openssl/"/>
+      <category term="openssl" scheme="http://evalonlabs.com/categories/security/openssl/"/>
     
-      <category term="encryption" scheme="http://evalonlabs.github.io/categories/security/openssl/encryption/"/>
+      <category term="encryption" scheme="http://evalonlabs.com/categories/security/openssl/encryption/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[How to encrypt local files]]></title>
-    <link href="http://evalonlabs.github.io/2015/12/07/How-to-encrypt-local-files/"/>
-    <id>http://evalonlabs.github.io/2015/12/07/How-to-encrypt-local-files/</id>
+    <link href="http://evalonlabs.com/2015/12/07/How-to-encrypt-local-files/"/>
+    <id>http://evalonlabs.com/2015/12/07/How-to-encrypt-local-files/</id>
     <published>2015-12-07T21:42:37.000Z</published>
     <updated>2015-12-09T08:05:21.000Z</updated>
     <content type="html"><![CDATA[<p>Securing local files, it’s a problem solved by a variaty of aps. Though each app are falling<br>into the falacy of providing their own way to encrypt and package the outputed file.<br>Now imagine the app developer deciding to discontinue the development and support of the app,<br>or even worse a known vulnerability of the app goes public (or worse, it never goes public).<br>Then you data are as unprotective as they were in their raw form. Why shouldn’t be an eay way<br>to make use of a trusted way? I guess the first solution that pops to our mind is <code>openssl</code>,<br>right? So why not using just <code>openssl</code> to do the heavy ligting?</p>
@@ -208,19 +208,19 @@
     <![CDATA[<p>Securing local files, it’s a problem solved by a variaty of aps. Though each app are falling<br>into the falacy of providing their own wa]]>
     </summary>
     
-      <category term="encryption" scheme="http://evalonlabs.github.io/tags/encryption/"/>
+      <category term="encryption" scheme="http://evalonlabs.com/tags/encryption/"/>
     
-      <category term="local files" scheme="http://evalonlabs.github.io/tags/local-files/"/>
+      <category term="local files" scheme="http://evalonlabs.com/tags/local-files/"/>
     
-      <category term="openssl" scheme="http://evalonlabs.github.io/tags/openssl/"/>
+      <category term="openssl" scheme="http://evalonlabs.com/tags/openssl/"/>
     
-      <category term="security" scheme="http://evalonlabs.github.io/tags/security/"/>
+      <category term="security" scheme="http://evalonlabs.com/tags/security/"/>
     
-      <category term="security" scheme="http://evalonlabs.github.io/categories/security/"/>
+      <category term="security" scheme="http://evalonlabs.com/categories/security/"/>
     
-      <category term="openssl" scheme="http://evalonlabs.github.io/categories/security/openssl/"/>
+      <category term="openssl" scheme="http://evalonlabs.com/categories/security/openssl/"/>
     
-      <category term="encryption" scheme="http://evalonlabs.github.io/categories/security/openssl/encryption/"/>
+      <category term="encryption" scheme="http://evalonlabs.com/categories/security/openssl/encryption/"/>
     
   </entry>
   
