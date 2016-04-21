@@ -51,10 +51,10 @@ author:
              {photographer, wannabe}}.
 
          {pgp, [
-             {github_url, https://gist.github.com/epappas/6fb30d0d14decb246c9a3837fa53da99},
-             {mit_host, https://pgp.mit.edu/pks/lookup?op=vindex&search=0x4EC050A9753BA2E6}]}.
+             {github_url, https://goo.gl/9rdxR8 },
+             {mit_host, https://goo.gl/6jEqa0 }]}.
 
-         {addresses,[
+         {addresses, [
              {bitcoin, 14ojSTH4rkHpzgCjNUSkYrgLrdrao6Bxns}]}.
 
     job: '[VibrantMedia, Evalonlabs].'
