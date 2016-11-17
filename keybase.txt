@@ -1,1 +1,75 @@
+==================================================================
 https://keybase.io/epappas
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://evalonlabs.com
+  * I am epappas (https://keybase.io/epappas) on keybase.
+  * I have a public key with fingerprint A131 F0CC 772B DE86 32E5  1F7F F6FE DFFE 62C8 7FC6
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0120d1aac35f7311ca68058a7df4f97ab209613ab70ee9efd283ff69910fa674ce170a",
+            "fingerprint": "a131f0cc772bde8632e51f7ff6fedffe62c87fc6",
+            "host": "keybase.io",
+            "key_id": "f6fedffe62c87fc6",
+            "kid": "01014469444e74a4d4c043dfb0d75b8801418e72a0ae20aecc376de47d82f374e4510a",
+            "uid": "7a6517deed4f72afb14f6dccfe5a8d19",
+            "username": "epappas"
+        },
+        "service": {
+            "hostname": "evalonlabs.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1479410016,
+    "expire_in": 157680000,
+    "prev": "f5b6445de9fdcc92b7285389a0d9dbd30faf1abfa5a5fff47a3c2f54f43cd692",
+    "seqno": 11,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.58
+Comment: https://keybase.io/crypto
+
+yMNxAnicbVJrTFRHFN5FbCO0FR+0gVKrNyrPwH3MvXMvPyo21ggtRQ2Q2jZd5947
+s2xZdpd9IEgJERGKGvqgyiuFGksN0EBqqbE8RBCQCgjKomiw/mgKIrG0xkVaCPYu
+Kf86yWQy53zfN985Z3peXKXz088t3V+S+/P79ANdFS7de9H6g7mUbFVzqNhcKh0v
+H9isYofTkG5SqViKZlhaZRBSOJ5AjmEUJIg0LyKoEkAkiGSWlgSGQzKkMZYwUVmR
+I0SQJIYmSIBAwQykERVFEZPFiO02u8ni1GQRwzGEVhQIWVnFosCxmGcI1JgEq4Rg
+gVVESBRBI6ZZHV6GZk5GDhxtsmox7WJYtvc/+BXfNAOAIAEAMAQIqEChAacSmVYh
+L4uilmVEDFlEI8xqW1E4KKgYQFVkCQcBBjyz7Nu1LAeRwDNQxVgFRCMRmQFEUBWF
+YB6JKiN5gQ5st6AMrKGxDdlsyEHlRVFaMMukYG9fvYWsALKQ2WoxI9kRrVgzNLLN
+bnVaFatZy6U5nbZYL9WZY/NiD2HZ8J+KQTZZVK2PGiEL2x0mq4WKZTSk4jR5ZRkA
+JcDQNCNEUTjbZrJjg8mL4KE2M215n8FZ3q7xsgAAr2KJaDVIrAxZkedECdGqpMoq
+p42OMEgmiEc8IQRAxCks4QEBnKIKEkt568q0WDVtRvOJjJqmw2S0IKfLjqm87q4P
+fXV6P91zq328H0zntyZg5dtd6gnQVe6QZZfxpdwk/cijybOOiOvN1Z/sPVK7vuPH
+wokU/c76az5rigLK/Q9Zfnp9YWGs/fwvRabPv6ZLU84Vt2xZvNl4oay7fSolePHY
+k9awx2+1Xdx3ri1h/PKZag6UbV9vOPXVVt+Ps19QSkbDpFocMn82ZMvJxHDP8Yit
+GWPwwcu6Px+113nerXjT9s1ITy2ZfXjlumd0OJg/PNOS8NSe5+qI/CH99jZ605mj
+M1TcSG+Ov86TEX610PFUqRqMCxh+m/mt2VmxbkjHkcjp5G0LNe74oEbrXynGaee1
+mMHJ8UD37rqH7g26kyRMinl/f+/FxrTQW89evXt3cE+dkJlVNe0rL+31P2B4HFIw
+PPMsP6w70dh5qqwpdK438Il70/1KfateF1hc0l0bMLbx0gf6jAE45gmK/1t0zSeN
+215bd3jzK8SymJj8mdvc799y4bvUE0MfZbpHC+ZbG94JP5FkDszpAj2dycc2H6k3
+z05cqf20sg+W3yldlT1ZKNSt3T30xUjjvVJq+4Yonxv6bHfajao4z82d/d/WR/f5
+dRQ1PbizW4oJbZ267Y6IL/g5UchzNdi+TJ1LDWqZ8/+1eqIieO1Q5P7BlNnLE7t8
+8093bRxb/XviH6P/7IiNKsYHv899/lb64L6atsmrnYnDUwf2zCQ0lw809VDni5nI
+o/eOlzTba3LfiGoo2XX6X7nvz/Y=
+=iNAn
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/epappas
+
+==================================================================
